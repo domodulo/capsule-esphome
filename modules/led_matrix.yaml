@@ -1,0 +1,16 @@
+light:
+  - id: led_matrix_light
+    name: LED matrix light
+    platform: esp32_rmt_led_strip
+    rgb_order: GRB
+    pin: ${leds_pin}
+    num_leds: 100
+    chipset: WS2812
+    rmt_symbols: 48
+
+# display:
+#   - platform: addressable_light
+#     id: led_matrix_display
+#     addressable_light_id: led_matrix_light
+#     width: 10
+#     height: 10

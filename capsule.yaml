@@ -1,0 +1,62 @@
+esphome:
+  name: domodulo-capsule
+  friendly_name: "domodulo Capsule"
+  name_add_mac_suffix: true
+  project: 
+    name: "domodulo.Capsule"
+    version: "0.4.0" 
+
+dashboard_import:
+  package_import_url: github://domodulo/capsule-esphome/capsule.yaml
+  import_full_config: true
+
+logger:
+
+# Wi-Fi
+wifi:
+  ap:
+    ssid: "domodulo Capsule"
+
+# Improv via BLE
+esp32_improv:
+  authorizer: none
+
+# Improv via Serial
+improv_serial:
+
+# OTA updates via ESPHome
+ota:
+  - platform: esphome
+    id: ota_esphome
+
+captive_portal:
+
+packages:
+  capsule:
+    url: https://github.com/domodulo/capsule-esphome
+    files:
+      - path: modules/base.yaml
+
+      # - path: modules/button.yaml
+      #   vars:
+      #     button_name: "Button A"
+      #     button_pin: 1
+      #     leds_id: leds_a
+      #     leds_name: "LEDs A"
+      #     leds_pin: 2
+
+      # - path: modules/dial.yaml
+      #   vars:
+      #     dial_name: "Dial C"
+      #     dial_id: dial_c
+      #     dial_pin_a: 12
+      #     dial_pin_b: 13
+      #     leds_id: dial_leds
+      #     leds_name: "Dial LEDs"
+      #     leds_pin: 14
+
+      # - path: modules/led_matrix.yaml
+      #   vars:
+      #     leds_pin: 6
+
+      # - path: modules/ths.yaml

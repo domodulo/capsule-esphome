@@ -1,0 +1,6 @@
+sensor:
+  - platform: shtcx
+    temperature:
+      name: "Temperature"
+    humidity:
+      name: "Humidity"

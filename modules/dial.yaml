@@ -1,0 +1,41 @@
+sensor:
+  - platform: rotary_encoder
+    name: ${dial_name}
+    id: ${dial_id}
+    pin_a: ${dial_pin_b}
+    pin_b: ${dial_pin_a}
+    resolution: 2
+    publish_initial_value: true
+    min_value: 0
+    max_value: 9
+    on_value:
+      then:
+        - light.addressable_set:
+            id: ${leds_id}
+            range_from: 0
+            range_to: 9
+            red: 0%
+            green: 0%
+            blue: 0%
+        - delay: 0.01s
+        - light.addressable_set:
+            id: ${leds_id}
+            range_from: 0
+            range_to: !lambda |-
+              return static_cast<int>(x);
+            red: 50%
+            green: 50%
+            blue: 50%
+        # - delay: 2s
+        # - light.turn_off: ${leds_id}
+
+light:
+  - id: ${leds_id}
+    platform: esp32_rmt_led_strip
+    rgb_order: GRB
+    pin:
+      number: ${leds_pin}
+    num_leds: 10
+    chipset: WS2812
+    name: ${leds_name}
+    rmt_symbols: 48

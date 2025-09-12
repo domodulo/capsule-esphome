@@ -1,0 +1,25 @@
+binary_sensor:
+  - platform: gpio
+    name: ${button_name}
+    pin:
+      number: ${button_pin}
+      inverted: true
+      mode:
+        input: true
+        pullup: true
+    on_press:
+      then:
+        - light.toggle: ${leds_id}
+    on_release:
+      then:
+        - delay: 1s
+        - light.turn_off: ${leds_id}
+light:
+  - id: ${leds_id}
+    platform: esp32_rmt_led_strip
+    rgb_order: GRB
+    pin: ${leds_pin}
+    num_leds: 4
+    chipset: WS2812
+    name: ${leds_name}
+    rmt_symbols: 48

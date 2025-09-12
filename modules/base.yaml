@@ -1,0 +1,48 @@
+esp32:
+  board: esp32-s3-devkitm-1
+  framework:
+    type: esp-idf
+
+# Home Assistant API
+api:
+  services:
+    # Buzzer service
+    - service: play_buzzer
+      variables:
+        song_str: string
+      then:
+        - rtttl.play:
+            rtttl: !lambda "return song_str;"
+
+light:
+  - name: "Base LED"
+    platform: esp32_rmt_led_strip
+    rgb_order: GRB
+    pin: 16
+    num_leds: 1
+    chipset: WS2812
+    rmt_symbols: 48
+    id: base_led
+
+output:
+  - platform: ledc
+    pin: 17
+    id: buzzer
+
+rtttl:
+  output: buzzer
+  id: buzzer_rtttl
+
+sensor:
+- platform: adc
+  name: "Battery voltage"
+  pin: 18
+  accuracy_decimals: 2
+  update_interval: 60s
+  attenuation: auto
+  filters:
+    - multiply: 2.0  # The voltage divider requires us to multiply by 2
+
+i2c:
+  sda: 33
+  scl: 34
