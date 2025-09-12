@@ -7,7 +7,7 @@ esphome:
     version: "0.4.0" 
 
 dashboard_import:
-  package_import_url: github://domodulo/capsule-esphome/capsule.yaml
+  package_import_url: github://domodulo/capsule-esphome/capsule.yaml@main
   import_full_config: true
 
 logger:
