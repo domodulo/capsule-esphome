@@ -2,6 +2,7 @@
 packages:
   capsule:
     url: https://github.com/domodulo/capsule-esphome
+    refresh: 1min
     files:
     - path: modules/base.yaml
       vars:
