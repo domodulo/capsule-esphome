@@ -7,6 +7,10 @@ esphome:
   friendly_name: "${friendly_name}"
   name_add_mac_suffix: true
 
+  project: 
+    name: "domodulo.Capsule"
+    version: "0.4"
+
 packages:
   capsule:
     url: https://github.com/domodulo/capsule-esphome
