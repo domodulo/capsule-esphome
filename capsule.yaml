@@ -1,17 +1,12 @@
-substitutions:
-  name: domodulo-capsule
-  friendly_name: "domodulo Capsule"
-
-esphome:
-  name: "${name}"
-  friendly_name: "${friendly_name}"
-  name_add_mac_suffix: true
 
 packages:
   capsule:
     url: https://github.com/domodulo/capsule-esphome
     files:
     - path: modules/base.yaml
+      vars:
+        name: domodulo-capsule
+        friendly_name: "domodulo Capsule"
 
     # - path: modules/battery.yaml
 
