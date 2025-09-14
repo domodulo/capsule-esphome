@@ -45,16 +45,6 @@ rtttl:
   output: buzzer
   id: buzzer_rtttl
 
-sensor:
-- platform: adc
-  name: "Battery voltage"
-  pin: 18
-  accuracy_decimals: 2
-  update_interval: 60s
-  attenuation: auto
-  filters:
-    - multiply: 2.0  # The voltage divider requires us to multiply by 2
-
 i2c:
   sda: 33
   scl: 34

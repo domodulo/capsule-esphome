@@ -12,6 +12,8 @@ packages:
     files:
     - path: modules/base.yaml
 
+    # - path: modules/battery.yaml
+
     # - path: modules/button.yaml
     #   vars:
     #     button_name: "Button A"
