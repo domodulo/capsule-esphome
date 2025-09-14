@@ -1,3 +1,15 @@
+logger:
+
+# OTA updates via ESPHome
+ota:
+- platform: esphome
+
+# Wi-Fi
+wifi:
+  ap:
+
+captive_portal:
+
 esp32:
   board: esp32-s3-devkitm-1
   framework:

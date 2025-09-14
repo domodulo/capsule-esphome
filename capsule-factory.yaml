@@ -2,20 +2,14 @@ esphome:
   name: domodulo-capsule
   friendly_name: "domodulo Capsule"
   name_add_mac_suffix: true
+
   project: 
     name: "domodulo.Capsule"
-    version: "0.4.0" 
+    version: "0.4.0"
 
 dashboard_import:
-  package_import_url: github://domodulo/capsule-esphome/capsule.yaml
+  package_import_url: github://domodulo/capsule-esphome/capsule.yaml@main
   import_full_config: true
-
-logger:
-
-# Wi-Fi
-wifi:
-  ap:
-    ssid: "domodulo Capsule"
 
 # Improv via BLE
 esp32_improv:
@@ -23,13 +17,6 @@ esp32_improv:
 
 # Improv via Serial
 improv_serial:
-
-# OTA updates via ESPHome
-ota:
-  - platform: esphome
-    id: ota_esphome
-
-captive_portal:
 
 packages:
   base: !include
