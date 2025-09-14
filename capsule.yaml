@@ -4,7 +4,7 @@ esphome:
   name_add_mac_suffix: true
   project: 
     name: "domodulo.Capsule"
-    version: "0.4.0" 
+    version: "0.4.1"
 
 dashboard_import:
   package_import_url: github://domodulo/capsule-esphome/capsule.yaml@main
