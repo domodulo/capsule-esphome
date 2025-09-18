@@ -1,11 +1,6 @@
-substitutions:
-  name: domodulo-capsule
-  friendly_name: "domodulo Capsule"
-
 esphome:
   name: "${name}"
   friendly_name: "${friendly_name}"
-  name_add_mac_suffix: true
 
   project: 
     name: "domodulo.Capsule"
