@@ -26,8 +26,8 @@ sensor:
             red: 50%
             green: 50%
             blue: 50%
-        # - delay: 2s
-        # - light.turn_off: ${leds_id}
+        - delay: 5s
+        - light.turn_off: ${leds_id}
 
 light:
   - id: ${leds_id}
