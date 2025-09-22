@@ -10,22 +10,24 @@ sensor:
     max_value: 9
     on_value:
       then:
+        # Clear all LEDs
         - light.addressable_set:
             id: ${leds_id}
-            range_from: 0
-            range_to: 9
-            red: 0%
-            green: 0%
-            blue: 0%
-        - delay: 0.01s
+            red: 100%
+            green: 100%
+            blue: 100%
+            color_brightness: 0%
+        - delay: 20ms
+        # Turn on LEDs 0 till <value>
         - light.addressable_set:
             id: ${leds_id}
             range_from: 0
             range_to: !lambda |-
               return static_cast<int>(x);
-            red: 50%
-            green: 50%
-            blue: 50%
+            red: 100%
+            green: 100%
+            blue: 100%
+            color_brightness: 20%
         - delay: 5s
         - light.turn_off: ${leds_id}
 
