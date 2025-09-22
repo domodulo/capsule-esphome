@@ -9,7 +9,7 @@ esphome:
 packages:
   capsule:
     url: https://github.com/domodulo/capsule-esphome
-    refresh: 1min
+    ref: "v0.4.0"
     files:
     - path: modules/base.yaml
 
