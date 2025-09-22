@@ -1,3 +1,7 @@
+substitutions:
+  name: domodulo-capsule
+  friendly_name: domodulo Capsule
+
 esphome:
   name: "${name}"
   friendly_name: "${friendly_name}"
@@ -23,18 +27,36 @@ packages:
     #     leds_name: "LEDs A"
     #     leds_pin: 2
 
+    # - path: modules/button.yaml
+    #   vars:
+    #     button_name: "Button C"
+    #     button_pin: 11
+    #     leds_id: leds_c
+    #     leds_name: "LEDs C"
+    #     leds_pin: 12
+
+    # - path: modules/dial.yaml
+    #   vars:
+    #     dial_name: "Dial A"
+    #     dial_id: dial_a
+    #     dial_pin_a: 2
+    #     dial_pin_b: 3
+    #     leds_id: dial_a_leds
+    #     leds_name: "Dial A LEDs"
+    #     leds_pin: 4
+
     # - path: modules/dial.yaml
     #   vars:
     #     dial_name: "Dial C"
     #     dial_id: dial_c
     #     dial_pin_a: 12
     #     dial_pin_b: 13
-    #     leds_id: dial_leds
-    #     leds_name: "Dial LEDs"
+    #     leds_id: dial_c_leds
+    #     leds_name: "Dial C LEDs"
     #     leds_pin: 14
 
     # - path: modules/led_matrix.yaml
     #   vars:
-    #     leds_pin: 6
+    #     leds_pin: 1 # or 6 or 11 depending on connector used
 
     # - path: modules/ths.yaml
