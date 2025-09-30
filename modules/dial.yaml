@@ -14,28 +14,32 @@ sensor:
         pulldown: true
     resolution: 2
     publish_initial_value: true
-    min_value: 0
-    max_value: 9
+    min_value: 1
+    max_value: 10
     on_value:
       then:
-        # Clear all LEDs
-        - light.addressable_set:
-            id: ${leds_id}
-            red: 100%
-            green: 100%
-            blue: 100%
-            color_brightness: 0%
-        - delay: 20ms
-        # Turn on LEDs 0 till <value>
+        # Turn on LEDs 1 till <value>
         - light.addressable_set:
             id: ${leds_id}
             range_from: 0
-            range_to: !lambda |-
-              return static_cast<int>(x);
+            range_to: !lambda 'return int(x - 1);'
             red: 100%
             green: 100%
             blue: 100%
             color_brightness: 20%
+        # Turn off LEDs <value + 1> till 10 if value < 10
+        - if:
+            condition:
+              lambda: 'return x < 10;'
+            then:
+              - light.addressable_set:
+                  id: ${leds_id}
+                  range_from: !lambda 'return int(x);'
+                  range_to: 9
+                  red: 100%
+                  green: 100%
+                  blue: 100%
+                  color_brightness: 0%
         - delay: 5s
         - light.turn_off: ${leds_id}
 
