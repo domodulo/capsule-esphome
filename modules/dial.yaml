@@ -2,8 +2,16 @@ sensor:
   - platform: rotary_encoder
     name: ${dial_name}
     id: ${dial_id}
-    pin_a: ${dial_pin_b}
-    pin_b: ${dial_pin_a}
+    pin_a:
+      number: ${dial_pin_b}
+      mode:
+        input: true
+        pulldown: true
+    pin_b:
+      number: ${dial_pin_a}
+      mode:
+        input: true
+        pulldown: true
     resolution: 2
     publish_initial_value: true
     min_value: 0
