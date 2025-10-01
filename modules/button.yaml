@@ -9,10 +9,11 @@ binary_sensor:
         pullup: true
     on_press:
       then:
-        - light.toggle: ${leds_id}
+        - light.turn_on:
+            id: ${leds_id}
+            transition_length: 0s
     on_release:
       then:
-        - delay: 1s
         - light.turn_off: ${leds_id}
 light:
   - id: ${leds_id}
