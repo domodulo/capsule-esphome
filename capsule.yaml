@@ -16,26 +16,31 @@ packages:
     url: https://github.com/domodulo/capsule-esphome
     ref: "v0.4.0"
     files:
+    # Base board
     - path: modules/base.yaml
 
+    # # Enable if using battery power
     # - path: modules/battery.yaml
 
+    # # Button module on connector A
     # - path: modules/button.yaml
     #   vars:
     #     button_name: "Button A"
     #     button_pin: 1
     #     leds_id: leds_a
-    #     leds_name: "LEDs A"
+    #     leds_name: "Button A LEDs"
     #     leds_pin: 2
 
+    # # Button module on connector C
     # - path: modules/button.yaml
     #   vars:
     #     button_name: "Button C"
     #     button_pin: 11
     #     leds_id: leds_c
-    #     leds_name: "LEDs C"
+    #     leds_name: "Button C LEDs"
     #     leds_pin: 12
 
+    # # Dial module on connector A
     # - path: modules/dial.yaml
     #   vars:
     #     dial_name: "Dial A"
@@ -46,6 +51,7 @@ packages:
     #     leds_name: "Dial A LEDs"
     #     leds_pin: 4
 
+    # # Dial module on connector C
     # - path: modules/dial.yaml
     #   vars:
     #     dial_name: "Dial C"
@@ -56,8 +62,10 @@ packages:
     #     leds_name: "Dial C LEDs"
     #     leds_pin: 14
 
+    # # LED Matrix module on connector A, B or C
     # - path: modules/led_matrix.yaml
     #   vars:
-    #     leds_pin: 1 # or 6 or 11 depending on connector used
+    #     leds_pin: 1 # or 6 or 11 depending on connector
 
+    # # THS module on any connector
     # - path: modules/ths.yaml
