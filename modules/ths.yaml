@@ -1,6 +1,25 @@
 sensor:
-  - platform: shtcx
+  - id: ths
+    platform: shtcx
     temperature:
       name: "Temperature"
+      id: ths_temperature
+      filters:
+        - offset: !lambda return id(ths_temp_offset).state;
     humidity:
       name: "Humidity"
+      id: ths_humidity
+
+number:
+  - platform: template
+    id: ths_temp_offset
+    name: "Temperature Offset"
+    icon: mdi:thermometer-plus
+    unit_of_measurement: "°C"
+    min_value: -50
+    max_value: 50
+    step: 0.1
+    initial_value: -7.0
+    optimistic: true
+    restore_value: true
+    mode: box
