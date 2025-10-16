@@ -14,7 +14,7 @@ esphome:
 packages:
   capsule:
     url: https://github.com/domodulo/capsule-esphome
-    ref: "v0.4.1"
+    ref: "v0.4.3"
     files:
     # Base board
     - path: modules/base.yaml
