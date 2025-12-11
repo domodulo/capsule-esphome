@@ -1,3 +1,5 @@
 # ESPHome
 /.esphome/
+/.venv/
 /secrets.yaml
+configs/
