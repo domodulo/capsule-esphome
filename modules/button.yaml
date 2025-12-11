@@ -1,5 +1,6 @@
 binary_sensor:
-  - platform: gpio
+  - id: ${button_id}
+    platform: gpio
     name: ${button_name}
     pin:
       number: ${button_pin}
