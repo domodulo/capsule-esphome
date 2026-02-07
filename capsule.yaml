@@ -9,12 +9,12 @@ esphome:
 
   project: 
     name: "domodulo.Capsule"
-    version: "0.4"
+    version: "1.0"
 
 packages:
   capsule:
     url: https://github.com/domodulo/capsule-esphome
-    ref: "v0.4.3"
+    ref: "v1.0.0"
     files:
     # Base board
     - path: modules/base.yaml
@@ -40,32 +40,7 @@ packages:
     #     leds_name: "Button C LEDs"
     #     leds_pin: 12
 
-    # # Dial module on connector A
-    # - path: modules/dial.yaml
-    #   vars:
-    #     dial_name: "Dial A"
-    #     dial_id: dial_a
-    #     dial_pin_a: 2
-    #     dial_pin_b: 3
-    #     leds_id: dial_a_leds
-    #     leds_name: "Dial A LEDs"
-    #     leds_pin: 4
-
-    # # Dial module on connector C
-    # - path: modules/dial.yaml
-    #   vars:
-    #     dial_name: "Dial C"
-    #     dial_id: dial_c
-    #     dial_pin_a: 12
-    #     dial_pin_b: 13
-    #     leds_id: dial_c_leds
-    #     leds_name: "Dial C LEDs"
-    #     leds_pin: 14
-
     # # LED Matrix module on connector A, B or C
     # - path: modules/led_matrix.yaml
     #   vars:
     #     leds_pin: 1 # or 6 or 11 depending on connector
-
-    # # THS module on any connector
-    # - path: modules/ths.yaml
