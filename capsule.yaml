@@ -25,6 +25,7 @@ packages:
     # # Button module on connector A
     # - path: modules/button.yaml
     #   vars:
+    #     button_id: button_a
     #     button_name: "Button A"
     #     button_pin: 1
     #     leds_id: leds_a
@@ -34,6 +35,7 @@ packages:
     # # Button module on connector C
     # - path: modules/button.yaml
     #   vars:
+    #     button_id: button_c
     #     button_name: "Button C"
     #     button_pin: 11
     #     leds_id: leds_c
