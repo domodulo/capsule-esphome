@@ -1,0 +1,43 @@
+substitutions:
+  name: domodulo-capsule
+  friendly_name: domodulo Capsule
+
+esphome:
+  name: "${name}"
+  friendly_name: "${friendly_name}"
+  name_add_mac_suffix: true
+
+  project: 
+    name: "domodulo.Capsule"
+    version: "1.0"
+
+packages:
+  capsule:
+    url: https://github.com/domodulo/capsule-esphome
+    ref: "v1.0.0"
+    files:
+    # Base board
+    - path: modules/base.yaml
+
+    # # Enable if using battery power
+    # - path: modules/battery.yaml
+
+    # Button module on connector A
+    - path: modules/button.yaml
+      vars:
+        button_id: button_a
+        button_name: "Button A"
+        button_pin: 1
+        leds_id: leds_a
+        leds_name: "Button A LEDs"
+        leds_pin: 2
+
+    # Button module on connector C
+    - path: modules/button.yaml
+      vars:
+        button_id: button_c
+        button_name: "Button C"
+        button_pin: 11
+        leds_id: leds_c
+        leds_name: "Button C LEDs"
+        leds_pin: 12
